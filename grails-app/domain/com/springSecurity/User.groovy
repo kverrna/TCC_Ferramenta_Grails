@@ -16,6 +16,7 @@ class User {
 
 	static transients = ['springSecurityService']
 
+
 	static constraints = {
 		profile blank:false
 		investmentValue blank:false

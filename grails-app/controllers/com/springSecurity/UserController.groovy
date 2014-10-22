@@ -25,7 +25,7 @@ class UserController {
 
 
 
-    @Secured(['ROLE_USER'])
+    @Secured(['ROLE_ADMIN'])
     def show(User userInstance) {
         respond userInstance
     }

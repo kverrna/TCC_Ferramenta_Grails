@@ -9,7 +9,7 @@
 	</label>
 	<br>
 	
-	<g:select name="stocks" from="${com.Stock.list()}" multiple="multiple" optionKey="id" size="5" required="" value="${walletInstance?.stocks*.id}" class="many-to-many"/>
+	<g:select name="stocks" from="${listStocks}" multiple="multiple" optionKey="id" size="5" required="" value="${walletInstance?.stocks*.id}" class="many-to-many"/>
 	<br>
 	<br>
 	<br>

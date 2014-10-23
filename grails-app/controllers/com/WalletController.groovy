@@ -51,7 +51,10 @@ class WalletController {
 
 
     def create() {
-        respond new Wallet(params)
+        def stock= new Stock()
+        def listStock = stock.listStocks()
+        [walletInstance:new Wallet(params),listStocks:listStock]
+      //  respond new Wallet(params)
     }
     
 

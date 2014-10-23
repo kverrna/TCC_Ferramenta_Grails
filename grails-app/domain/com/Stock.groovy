@@ -1,6 +1,10 @@
 package com
 
+
 class Stock {
+    
+    transient springSecurityService 
+
 	String codeName
     double avarangeReturn_15
     double avarangeReturn_30
@@ -12,24 +16,27 @@ class Stock {
     double varianceCoeffientt_15
     String userId
 
-    static belengsTo=Wallet
-
-
+    static belongsTo=Wallet
+    
+    static transients=['springSecurityService']
 
     static constraints = 
     {
         userId (nullable:true)
 
     }
+    
+    //=)
     String toString()
     {
     	return codeName
     }
-     Stock listStocks()
+    
+     def listStocks()
     {
-        def springSecurityService
-        def user=springSecurityService.currentUser 
-        def stockInstanceList=Stock.findByUserId(user.username)
+        
+        def user=springSecurityService.currentUser
+        def stockInstanceList=Stock.findAllByUserId(user.username)
         
         return stockInstanceList
 

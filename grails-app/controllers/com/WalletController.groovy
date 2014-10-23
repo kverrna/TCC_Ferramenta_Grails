@@ -1,7 +1,6 @@
 package com
 
 
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.springframework.dao.DataIntegrityViolationException
@@ -20,27 +19,41 @@ class WalletController {
     def db = mongo.getDB("TCCGrails_2_4_3")//Busca banco 
 
     def index(Integer max) {
-
+        def user = springSecurityService.currentUser
         if(!((springSecurityService.currentUser)==null))
         {
-            def user = springSecurityService.currentUser
             print(" Current User springframework = "+user.username)
+            
             db.userLogged.insert([_id:user.username,userIdentifier:user.username])
         }
         else print("Sem usuarios logados")
-        params.max = Math.min(max ?: 10, 100)
-        respond Wallet.list(params), model:[walletInstanceCount: Wallet.count()]
+
+        params.max = Math.min(max ?: 10,100)
+        
+        if(user!=null)
+        {
+            def walletInstanceList=Wallet.findByUserId(user.username)
+            [walletInstanceList : walletInstanceList,walletInstanceCount: 1]
+        }else
+        {
+            respond Wallet.list(params),model:[stockInstanceCount:1]
+            
+        }
+        
+
+        
+       
     }
 
-    def show(Wallet walletInstance)
-     {
-
+    def show(Wallet walletInstance) {
         respond walletInstance
     }
+
 
     def create() {
         respond new Wallet(params)
     }
+    
 
     @Transactional
     def save(Wallet walletInstance) {
@@ -54,11 +67,16 @@ class WalletController {
             return
         }
 
+       def user = springSecurityService.currentUser
+       
+        
+        walletInstance.userId=user.username
         walletInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'wallet.label', default: 'Wallet'), walletInstance.id])
+                flash.message="Carteira criada com Sucesso"
+               // flash.message = message(code: 'default.created.message', args: [message(code: 'wallet.label', default: 'Wallet'), walletInstance.id])
                 redirect walletInstance
             }
             '*' { respond walletInstance, [status: CREATED] }
@@ -71,6 +89,7 @@ class WalletController {
 
     @Transactional
     def update(Wallet walletInstance) {
+
         if (walletInstance == null) {
             notFound()
             return
@@ -85,7 +104,9 @@ class WalletController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Wallet.label', default: 'Wallet'), walletInstance.id])
+
+                flash.message="Carteira atualizada com Sucesso!"
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'Wallet.label', default: 'Wallet'), walletInstance.id])
                 redirect walletInstance
             }
             '*'{ respond walletInstance, [status: OK] }
@@ -104,7 +125,8 @@ class WalletController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Wallet.label', default: 'Wallet'), walletInstance.id])
+                flash.message="Carteira apagada!"
+               // flash.message = message(code: 'default.deleted.message', args: [message(code: 'Wallet.label', default: 'Wallet'), walletInstance.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }

@@ -5,8 +5,9 @@ import grails.transaction.Transactional
 import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
 import com.gmongo.GMongo 
-//@Transactional(readOnly = true)
-@Secured(['ROLE_ADMIN'])
+
+@Transactional(readOnly = true)
+
 class UserController {
 
 
@@ -19,14 +20,19 @@ class UserController {
 
     @Secured(['ROLE_USER'])
     def index(Integer max) {
+
+        redirect(controller:'Wallet',action:'index')
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userInstanceCount: User.count()]
     }
 
 
 
-    @Secured(['ROLE_ADMIN'])
+    @Secured(['ROLE_USER'])
     def show(User userInstance) {
+
+       
+        redirect(controller:'Wallet',action:'index')
         respond userInstance
     }
     @Secured(['permitAll'])
@@ -72,7 +78,6 @@ class UserController {
        //render role.authority
         //return 
          // 
-         
 
          //Insere usuario na colecao de demanda para o agente criador 
          db.ordersCreate.insert([userIdentifier:userInstance.username,userPerfil:userInstance.profile,userValue:userInstance.investmentValue])

@@ -132,7 +132,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
 ]
-grails . plugins . springsecurity . securityConfigType = "Annotation"
+grails.plugins.springsecurity.ssecurityConfigType = "Annotation"
 grails.plugin.springsecurity.successHandler.defaultTargetUrl='/wallet/index'
 
 

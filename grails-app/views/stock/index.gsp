@@ -30,11 +30,11 @@
 					
 						<g:sortableColumn property="codeName" title="${message(code: 'stock.codeName.label', default: 'Code Name')}" />
 					
-						<g:sortableColumn property="sector" title="${message(code: 'stock.sector.label', default: 'Sector')}" />
-					
 						<g:sortableColumn property="standardDeviation_15" title="${message(code: 'stock.standardDeviation_15.label', default: 'Standard Deviation15')}" />
 					
 						<g:sortableColumn property="standardDeviation_30" title="${message(code: 'stock.standardDeviation_30.label', default: 'Standard Deviation30')}" />
+					
+						<g:sortableColumn property="varianceCoeffientt_15" title="${message(code: 'stock.varianceCoeffientt_15.label', default: 'Variance Coeffientt15')}" />
 					
 					</tr>
 				</thead>
@@ -48,11 +48,11 @@
 					
 						<td>${fieldValue(bean: stockInstance, field: "codeName")}</td>
 					
-						<td>${fieldValue(bean: stockInstance, field: "sector")}</td>
-					
 						<td>${fieldValue(bean: stockInstance, field: "standardDeviation_15")}</td>
 					
 						<td>${fieldValue(bean: stockInstance, field: "standardDeviation_30")}</td>
+					
+						<td>${fieldValue(bean: stockInstance, field: "varianceCoeffientt_15")}</td>
 					
 					</tr>
 				</g:each>

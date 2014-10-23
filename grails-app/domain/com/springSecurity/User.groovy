@@ -1,5 +1,5 @@
 package com.springSecurity
-
+import com.Wallet
 
 class User {
 
@@ -13,9 +13,9 @@ class User {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-
+	
 	static transients = ['springSecurityService']
-
+	
 
 	static constraints = {
 		profile blank:false
@@ -23,6 +23,12 @@ class User {
 		username blank: false, unique: true
 		password blank: false
 
+
+	}
+
+	String toString()
+	{
+		return username
 	}
 
 	static mapping = {

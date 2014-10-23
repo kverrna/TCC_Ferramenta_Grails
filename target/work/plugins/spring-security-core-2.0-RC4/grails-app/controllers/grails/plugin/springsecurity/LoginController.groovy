@@ -49,8 +49,8 @@ class LoginController {
 		
 		if (springSecurityService.isLoggedIn()) 
 		{
-		
-
+			
+			
 			redirect uri: SpringSecurityUtils.securityConfig.successHandler.defaultTargetUrl
 			
 		}

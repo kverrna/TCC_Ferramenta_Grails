@@ -29,15 +29,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: stockInstance, field: 'sector', 'error')} ">
-	<label for="sector">
-		<g:message code="stock.sector.label" default="Sector" />
-		
-	</label>
-	<g:textField name="sector" value="${stockInstance?.sector}" />
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: stockInstance, field: 'standardDeviation_15', 'error')} ">
 	<label for="standardDeviation_15">
 		<g:message code="stock.standardDeviation_15.label" default="Standard Deviation15" />

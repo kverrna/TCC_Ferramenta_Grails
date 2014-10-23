@@ -4,13 +4,12 @@ package com
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-import grails.transaction.Transactional
 import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
 import com.gmongo.GMongo 
 
 @Transactional(readOnly = true)
-@Secured(['ROLE_USER'])   
+@Secured(['ROLE_USER'])
 class StockController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]

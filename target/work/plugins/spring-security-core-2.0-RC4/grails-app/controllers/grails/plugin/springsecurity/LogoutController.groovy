@@ -18,15 +18,26 @@ import javax.servlet.http.HttpServletResponse
 
 import org.springframework.security.access.annotation.Secured
 
+
 @Secured('permitAll')
 class LogoutController {
 
-
+	
+	
 	/**
 	 * Index action. Redirects to the Spring security logout uri.
 	 */
 	def index() {
-		print("Logout clicked!!")
+		
+		
+     /*
+        if(!((springSecurityService.currentUser)==null))
+        {
+            print(" Current User springframework = "+user.username)
+            
+            db.userUnLogged.insert([_id:user.username,userIdentifier:user.username])
+        }
+		*/
 		/*
 		if (!request.post && SpringSecurityUtils.getSecurityConfig().logout.postOnly) 
 		{

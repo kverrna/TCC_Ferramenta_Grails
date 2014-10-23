@@ -8,7 +8,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -30,11 +30,11 @@
 					
 						<g:sortableColumn property="enabled" title="${message(code: 'user.enabled.label', default: 'Enabled')}" />
 					
+						<g:sortableColumn property="investmentValue" title="${message(code: 'user.investmentValue.label', default: 'Investment Value')}" />
+					
 						<g:sortableColumn property="password" title="${message(code: 'user.password.label', default: 'Password')}" />
 					
 						<g:sortableColumn property="passwordExpired" title="${message(code: 'user.passwordExpired.label', default: 'Password Expired')}" />
-					
-						<g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Username')}" />
 					
 					</tr>
 				</thead>
@@ -48,11 +48,11 @@
 					
 						<td><g:formatBoolean boolean="${userInstance.enabled}" /></td>
 					
+						<td>${fieldValue(bean: userInstance, field: "investmentValue")}</td>
+					
 						<td>${fieldValue(bean: userInstance, field: "password")}</td>
 					
 						<td><g:formatBoolean boolean="${userInstance.passwordExpired}" /></td>
-					
-						<td>${fieldValue(bean: userInstance, field: "username")}</td>
 					
 					</tr>
 				</g:each>

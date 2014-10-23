@@ -10,6 +10,7 @@ class Stock {
     double variance_30
     double varianceCoeffientt_30
     double varianceCoeffientt_15
+    String userId
 
     static belengsTo=Wallet
 
@@ -17,11 +18,25 @@ class Stock {
 
     static constraints = 
     {
+        userId (nullable:true)
+
     }
     String toString()
     {
     	return codeName
     }
+     Stock listStocks()
+    {
+        def springSecurityService
+        def user=springSecurityService.currentUser 
+        def stockInstanceList=Stock.findByUserId(user.username)
+        
+        return stockInstanceList
+
+    }
+ 
+
+
 
 
 }

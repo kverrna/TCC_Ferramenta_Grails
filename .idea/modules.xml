@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/target/work/plugins/cache-1.1.7/src/cache-1.1.7.iml" filepath="$PROJECT_DIR$/target/work/plugins/cache-1.1.7/src/cache-1.1.7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grails-app/grails-app.iml" filepath="$PROJECT_DIR$/grails-app/grails-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/work/plugins/plugins.iml" filepath="$PROJECT_DIR$/target/work/plugins/plugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/work/plugins/scaffolding-2.1.2/src/scaffolding-2.1.2.iml" filepath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.1.2/src/scaffolding-2.1.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC4/src/spring-security-core-2.0-RC4.iml" filepath="$PROJECT_DIR$/target/work/plugins/spring-security-core-2.0-RC4/src/spring-security-core-2.0-RC4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/templates/templates.iml" filepath="$PROJECT_DIR$/src/templates/templates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/work/plugins/tomcat-7.0.55/src/tomcat-7.0.55.iml" filepath="$PROJECT_DIR$/target/work/plugins/tomcat-7.0.55/src/tomcat-7.0.55.iml" />
+    </modules>
+  </component>
+</project>

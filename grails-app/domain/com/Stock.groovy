@@ -1,10 +1,12 @@
 package com
+import org.bson.types.ObjectId
 
 
 class Stock {
     
     transient springSecurityService 
 
+    ObjectId id
 	String codeName
     double avarangeReturn_15
     double avarangeReturn_30
@@ -14,6 +16,7 @@ class Stock {
     double variance_30
     double varianceCoeffientt_30
     double varianceCoeffientt_15
+    double currentPrice
     String userId
 
     static belongsTo=Wallet
@@ -26,7 +29,6 @@ class Stock {
 
     }
     
-    //=)
     String toString()
     {
     	return codeName
@@ -41,9 +43,11 @@ class Stock {
         return stockInstanceList
 
     }
- 
+    
 
 
+    
+    
 
 
 }

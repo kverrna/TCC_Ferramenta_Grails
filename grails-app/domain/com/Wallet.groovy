@@ -3,6 +3,7 @@ import com.springSecurity.User
 
 class Wallet {
 
+    
  	String userId
     double walletValue
     double walletRisck
@@ -15,7 +16,7 @@ class Wallet {
     static constraints = {
    
     	userId (nullable:true)
-    	//userId (unique:true)
+    	userId (unique:true)
     }
     String toString()
     {

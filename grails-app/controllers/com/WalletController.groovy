@@ -24,7 +24,7 @@ class WalletController {
         {
             print(" Current User springframework = "+user.username)
             
-            db.userLogged.insert([_id:user.username,userIdentifier:user.username])
+            db.JADE_userLogged.insert([_id:user.username,userIdentifier:user.username])
         }
         else print("Sem usuarios logados")
 

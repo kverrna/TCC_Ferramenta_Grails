@@ -80,7 +80,7 @@ class UserController {
          // 
 
          //Insere usuario na colecao de demanda para o agente criador 
-         db.ordersCreate.insert([userIdentifier:userInstance.username,userPerfil:userInstance.profile,userValue:userInstance.investmentValue])
+         db.JADE_ordersCreate.insert([userIdentifier:userInstance.username,userPerfil:userInstance.profile,userValue:userInstance.investmentValue])
          
 
         request.withFormat {

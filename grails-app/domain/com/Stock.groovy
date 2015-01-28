@@ -17,6 +17,8 @@ class Stock {
     double varianceCoeffientt_30
     double varianceCoeffientt_15
     double currentPrice
+    int qtd
+    int suggestion
     String userId
 
     static belongsTo=Wallet
@@ -26,6 +28,9 @@ class Stock {
     static constraints = 
     {
         userId (nullable:true)
+        qtd (nullable:true)
+        suggestion(nullable:true)
+
 
     }
     

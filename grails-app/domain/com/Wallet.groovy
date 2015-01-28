@@ -11,12 +11,10 @@ class Wallet {
 
     static hasMany=[stocks:Stock]
 
-    
-
     static constraints = {
    
-    	userId (nullable:true)
-    	userId (unique:true)
+    	userId (nullable:true,unique:true)
+
     }
     String toString()
     {

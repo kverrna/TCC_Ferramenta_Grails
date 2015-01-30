@@ -91,18 +91,20 @@
         						<td>${fieldValue(bean: stockInstance, field: "walltetPercent")}
 
 
-										<g:if test="${stockInstance.currentPrice==19}">
+										<g:if test="${stockInstance.suggestion==20}">
 
-											<g:link	action="buy" id=" 1" class="btn green"> Buy </g:link>
+											<a href="${createLink(action: 'saveSuggestionApprove', controller: 'stock', params:[codeName :"${stockInstance.codeName}", userName: "${stockInstance.userId}",op:21])}" class="btn green">Comprar</a>
 
 										</g:if>
 
-										<g:if test="${1}">
+										<g:if test="${stockInstance.suggestion==10}">
 
-											<g:link	action="sell" id=" 1" class="btn green"> Sell </g:link>
+											<a href="${createLink(action: 'saveSuggestionApprove', controller: 'stock', params:[codeName :"${stockInstance.codeName}", userName: "${stockInstance.userId}",op:10])}" class="btn red">Vender</a>
+
+
 										</g:if>
 
-										 <g:if test="${1}">
+										 <g:if test="${stockInstance.suggestion==00}">
 
 
   											<h4 style="padding: 7px 7px;
@@ -112,7 +114,7 @@
                                                        	width:50px;
                                                        	cursor: pointer;
                                                        	color: #000;
-                                                       	background-color: #D3D3D3;">nada</h4>
+                                                       	background-color: #D3D3D3;"></h4>
 
 										</g:if>
 

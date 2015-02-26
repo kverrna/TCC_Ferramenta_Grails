@@ -33,7 +33,8 @@ class WalletController {
         if(user!=null)
         {
             def walletInstanceList=Wallet.findByUserId(user.username)
-            [walletInstanceList : walletInstanceList,walletInstanceCount: 1]
+            def stockInstanceList= Stock.findAllByUserId(user.username)
+            [walletInstanceList : walletInstanceList,walletInstanceCount: 1,stockInstanceList:stockInstanceList]
         }else
         {
             respond Wallet.list(params),model:[stockInstanceCount:1]
@@ -79,11 +80,13 @@ class WalletController {
         request.withFormat {
             form multipartForm {
                 flash.message="Carteira criada com Sucesso"
-               // flash.message = message(code: 'default.created.message', args: [message(code: 'wallet.label', default: 'Wallet'), walletInstance.id])
+
                 redirect walletInstance
             }
             '*' { respond walletInstance, [status: CREATED] }
         }
+
+
     }
 
     def edit(Wallet walletInstance) {

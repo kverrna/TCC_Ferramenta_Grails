@@ -21,5 +21,8 @@
     <orderEntry type="module" module-name="scaffolding-2.1.2" />
     <orderEntry type="module" module-name="spring-security-core-2.0-RC4" />
     <orderEntry type="module" module-name="cache-1.1.7" />
+    <orderEntry type="module" module-name="scaffolding-2.1.2" />
+    <orderEntry type="module" module-name="spring-security-core-2.0-RC4" />
+    <orderEntry type="module" module-name="cache-1.1.7" />
   </component>
 </module>

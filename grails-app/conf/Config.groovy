@@ -134,6 +134,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 ]
 grails.plugins.springsecurity.ssecurityConfigType = "Annotation"
 grails.plugin.springsecurity.successHandler.defaultTargetUrl='/wallet/index'
+grails.views.javascript.library="jquery"
 
 
 

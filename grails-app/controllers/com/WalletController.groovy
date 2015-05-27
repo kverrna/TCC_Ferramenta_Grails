@@ -41,9 +41,6 @@ class WalletController {
             
         }
         
-
-        
-       
     }
 
     def show(Wallet walletInstance) {

@@ -53,6 +53,7 @@ grails.project.dependency.resolution = {
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
         compile "net.sf.ehcache:ehcache-core:2.4.8"
+        
 
     }
 
@@ -73,6 +74,8 @@ grails.project.dependency.resolution = {
        compile ":spring-security-core:2.0-RC4"
        compile ":spring-security-ui:1.0-RC2"
       
+        compile ":jquery:1.11.1"
+        compile ":jquery-ui:1.10.4"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"

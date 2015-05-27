@@ -1,5 +1,6 @@
 package com.springSecurity
 import com.Wallet
+import com.Sac
 
 class User {
 
@@ -14,6 +15,7 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 	
+	
 	static transients = ['springSecurityService']
 	
 
@@ -26,6 +28,10 @@ class User {
 
 	}
 
+    def currentUser()
+    {
+    	springSecurityService.currentUser
+    }
 	String toString()
 	{
 		return username

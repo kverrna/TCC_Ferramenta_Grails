@@ -25,7 +25,8 @@ class StockController {
     {
         db.stock.update([codeName:codeName,userId:userName],[$set:[suggestion:op]])
 
-                render "Params: CodeName  = $codeName, User Name= $userName Op=$op"
+               // render "Params: CodeName  = $codeName, User Name= $userName Op=$op"
+               redirect(controller: "wallet", action: "index")
     }
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

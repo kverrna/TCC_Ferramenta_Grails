@@ -6,7 +6,10 @@ import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
 import com.gmongo.GMongo 
 
+
 @Transactional(readOnly = true)
+
+
 
 class UserController {
 
@@ -91,11 +94,12 @@ class UserController {
             '*' { respond userInstance, [status: CREATED] }
         }
     }
-
+    @Secured(['ROLE_USER'])
     def edit(User userInstance) {
         respond userInstance
     }
 
+    @Secured(['ROLE_USER'])
     @Transactional
     def update(User userInstance) {
         if (userInstance == null) {
@@ -118,7 +122,7 @@ class UserController {
             '*'{ respond userInstance, [status: OK] }
         }
     }
-
+    @Secured(['ROLE_USER'])
     @Transactional
     def delete(User userInstance) {
 

@@ -66,11 +66,14 @@
 				<div class="hor-menu hidden-sm hidden-xs">
 					<ul class="nav navbar-nav">
 						<li class="classic-menu-dropdown">
-							<g:link controller="wallet" action="create">
-								Nova Carteira
+							<a href="/TCCGrails_2_4_3/about/index">Sobre</a>
+						</li>
+						<li class="classic-menu-dropdown">
+							<g:link controller="sac" action="create">
+								SAC
 							</g:link>
 						</li>
-						
+
 					</ul>
 				</div>
 

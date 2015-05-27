@@ -3,18 +3,25 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    <meta http-equiv="refresh" content="6">
-
+    
+     <g:javascript library="jquery" plugin="jquery"/>
+ 	<r:layoutResources/>
 		<meta name="layout" content="main">
+		 <meta http-equiv="refresh" content="6">
 		<g:set var="entityName" value="${message(code: 'wallet.label', default: 'Wallet')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
 		
+<div id="show" align="center"></div>
+
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}">Doar Dinheiro para o Ramon</a></li>
-				
+				 <div>
+            
+        </div>
+
 			</ul>
 		</div>
 		<div id="list-wallet" class="content scaffold-list" role="main">
@@ -25,8 +32,9 @@
 			</g:if>
 
 
-<g:if test="${walletInstanceList}==null">
-<h1>aoooaaaH</h1>
+<g:if test="${stockInstanceList.size()==0}">
+
+<h3>Ainda não existem sugestões de compra de ações, por favor aguarde.</h3>
 </g:if>
 <g:else>
 
@@ -76,8 +84,10 @@
 		<div id="list-wallet" class="content scaffold-list" role="main">
         			<h1>Ativos</h1>
 
-<g:if test="${walletInstanceList}==null">
-<h1>aoooaaaH</h1>
+<g:if test="${stockInstanceList.size()==0}">
+		<center><g:img dir="images" file="ajax-loading.gif" width="50" height="50"/></center>
+<center>Procurando oportunidades de compra</center>
+
 </g:if>
 <g:else>
 
